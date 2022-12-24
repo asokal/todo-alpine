@@ -1,0 +1,109 @@
+:root {
+	--danger-color: #f44336;
+}
+
+.l-container {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.form__button {
+	padding: 0.5rem 2rem;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+
+	&__title {
+		margin-bottom: 0.5rem;
+		font-weight: bold;
+	}
+
+	&__input {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&--radio {
+		border: 1px solid var(--color-bg-secondary);
+		border-radius: var(--border-radius);
+	}
+}
+
+.radio {
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+
+	&__button {
+		padding: 0 0;
+		padding: 0;
+		margin: 0 0.2rem 0 0;
+	}
+
+	&__name {
+		font-weight: normal;
+	}
+
+	&__extra {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+}
+
+.todo-filter {
+	&__btn {
+		padding: 0.5rem 2rem;
+
+		&.is-active {
+			background-color: var(--danger-color);
+			border-color: var(--danger-color);
+		}
+	}
+}
+
+.todo-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	&__item {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	&__item-btn {
+		background-color: var(--danger-color);
+		border-color: var(--danger-color);
+		font-weight: normal;
+		padding: 0 0.4rem;
+		margin-left: auto;
+	}
+}
+
+.checkbox {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	margin-bottom: 0;
+	cursor: pointer;
+
+	&__checkmark {
+		width: 1.2rem;
+		height: 1.2rem;
+		padding: 0;
+		margin: 0 0.8rem 0 0;
+	}
+
+	&__name {
+		font-weight: normal;
+	}
+
+	&--crossed {
+		.checkbox__name {
+			text-decoration: line-through;
+		}
+	}
+}

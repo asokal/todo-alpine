@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
+		<link rel="stylesheet" href="./style.css" />
+		<script
+			defer
+			src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
+		<title>Todo App</title>
+	</head>
+	<body>
+		<main class="todo">
+			<div class="l-container">
+				<h1>Todo List 📃</h1>
+				<form class="form">
+					<div class="form-group">
+						<label for="task-input" class="form-group__title">
+							Что нужно сделать?
+						</label>
+
+						<input
+							type="text"
+							name="task-input"
+							id="task-input"
+							class="form-group__input"
+							placeholder="Сходить за продуктами"
+						/>
+					</div>
+
+					<fieldset class="form-group form-group--radio">
+						<legend class="form-group__title">
+							Выберите категорию
+						</legend>
+
+						<label class="radio">
+							<input
+								type="radio"
+								name="task-category"
+								class="radio__button"
+								value="Личное"
+								checked
+							/>
+							<span class="radio__name"> Личное </span>
+						</label>
+
+						<label class="radio">
+							<input
+								type="radio"
+								name="task-category"
+								class="radio__button"
+								value="Работа"
+							/>
+							<span class="radio__name"> Работа </span>
+						</label>
+
+						<label class="radio">
+							<input
+								type="radio"
+								name="task-category"
+								class="radio__button"
+								value="large"
+							/>
+
+							<span class="radio__name"> Новая категория </span>
+
+							<input
+								type="text"
+								class="radio__extra"
+								placeholder="Название"
+							/>
+						</label>
+					</fieldset>
+
+					<button class="form__button">Добавить</button>
+				</form>
+
+				<h2>Список задач:</h2>
+
+				<div class="todo-filter">
+					<button class="todo-filter__btn is-active">Все</button>
+
+					<button class="todo-filter__btn">Личное</button>
+
+					<button class="todo-filter__btn">Работа</button>
+				</div>
+
+				<ul class="todo-list">
+					<li class="todo-list__item">
+						<label class="checkbox">
+							<input
+								type="checkbox"
+								name="task-checkmark"
+								class="checkbox__checkmark"
+							/>
+							<span class="checkbox__name">Помыть посуду</span>
+						</label>
+
+						<button class="todo-list__item-btn">Удалить</button>
+					</li>
+
+					<li class="todo-list__item">
+						<label class="checkbox checkbox--crossed">
+							<input
+								type="checkbox"
+								name="task-checkmark"
+								class="checkbox__checkmark"
+								checked
+							/>
+							<span class="checkbox__name">Вынести мусор</span>
+						</label>
+
+						<button class="todo-list__item-btn">Удалить</button>
+					</li>
+
+					<li class="todo-list__item">
+						<label class="checkbox">
+							<input
+								type="checkbox"
+								name="task-checkmark"
+								class="checkbox__checkmark"
+							/>
+							<span class="checkbox__name">Купить продукты</span>
+						</label>
+
+						<button class="todo-list__item-btn">Удалить</button>
+					</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>
