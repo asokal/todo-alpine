@@ -1,0 +1,21 @@
+{
+	"name": "todo-alpine",
+	"version": "1.0.0",
+	"description": "\"todo app with alpine.js\"",
+	"main": "index.js",
+	"scripts": {
+		"build:css": "postcss ./src/style.css --dir ./",
+		"watch:css": "postcss ./src/style.css --dir ./ -w"
+	},
+	"author": "Alan Sokurov",
+	"license": "ISC",
+	"devDependencies": {
+		"cssnano": "^5.1.14",
+		"postcss": "^8.4.20",
+		"postcss-cli": "^10.1.0",
+		"postcss-nested": "^6.0.0"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.13"
+	}
+}
