@@ -88,7 +88,7 @@
 				<div class="todo-filter">
 					<button
 						class="todo-filter__btn"
-						@class="{'is-active' : visibility === 'Все'}"
+						:class="{'is-active' : visibility === 'Все'}"
 						@click="visibility = 'Все'"
 					>
 						Все
@@ -96,7 +96,7 @@
 
 					<button
 						class="todo-filter__btn"
-						@class="{'is-active' : visibility === 'Личное'}"
+						:class="{'is-active' : visibility === 'Личное'}"
 						@click="visibility = 'Личное'"
 					>
 						Личное
@@ -104,7 +104,7 @@
 
 					<button
 						class="todo-filter__btn"
-						@class="{'is-active' : visibility === 'Работа'}"
+						:class="{'is-active' : visibility === 'Работа'}"
 						@click="visibility = 'Работа'"
 					>
 						Работа
@@ -115,7 +115,7 @@
 					<template x-for="todo in todos" :key="todo.id">
 						<li
 							class="todo-list__item"
-							x-show="visibility === todo.category || 'Все'"
+							x-show="visibility === todo.category || visibility === 'Все'"
 						>
 							<label
 								class="checkbox"
