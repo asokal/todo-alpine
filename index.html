@@ -39,43 +39,21 @@
 							Выберите категорию
 						</legend>
 
-						<label class="radio">
-							<input
-								type="radio"
-								name="task-category"
-								class="radio__button"
-								value="Личное"
-								checked
-							/>
-							<span class="radio__name"> Личное </span>
-						</label>
-
-						<label class="radio">
-							<input
-								type="radio"
-								name="task-category"
-								class="radio__button"
-								value="Работа"
-							/>
-							<span class="radio__name"> Работа </span>
-						</label>
-
-						<label class="radio" x-show="false">
-							<input
-								type="radio"
-								name="task-category"
-								class="radio__button"
-								value="large"
-							/>
-
-							<span class="radio__name"> Новая категория </span>
-
-							<input
-								type="text"
-								class="radio__extra"
-								placeholder="Название"
-							/>
-						</label>
+						<template x-for="category in categories">
+							<label class="radio">
+								<input
+									type="radio"
+									name="task-category"
+									class="radio__button"
+									:value="category"
+									x-model="current.category"
+								/>
+								<span
+									class="radio__name"
+									x-text="category"
+								></span>
+							</label>
+						</template>
 					</fieldset>
 
 					<button class="form__button" @click="addTodo">
@@ -94,27 +72,21 @@
 						Все
 					</button>
 
-					<button
-						class="todo-filter__btn"
-						:class="{'is-active' : visibility === 'Личное'}"
-						@click="visibility = 'Личное'"
-					>
-						Личное
-					</button>
-
-					<button
-						class="todo-filter__btn"
-						:class="{'is-active' : visibility === 'Работа'}"
-						@click="visibility = 'Работа'"
-					>
-						Работа
-					</button>
+					<template x-for="category in categories">
+						<button
+							class="todo-filter__btn"
+							:class="{'is-active' : visibility === category}"
+							@click="visibility = category"
+							x-text="category"
+						></button>
+					</template>
 				</div>
 
 				<ul class="todo-list">
 					<template x-for="todo in todos" :key="todo.id">
 						<li
 							class="todo-list__item"
+							x-transition.opacity
 							x-show="visibility === todo.category || visibility === 'Все'"
 						>
 							<label
