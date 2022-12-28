@@ -55,8 +55,12 @@
 }
 
 .todo-filter {
+	display: flex;
+	flex-wrap: wrap;
+
 	&__btn {
 		padding: 0.5rem 2rem;
+		margin-right: 10px;
 
 		&.is-active {
 			background-color: var(--danger-color);

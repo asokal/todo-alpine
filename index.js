@@ -1,8 +1,13 @@
 function todoApp() {
 	return {
+		current: {
+			task: '',
+			category: 'Личное',
+		},
+
 		todos: [
 			{
-				id: 1,
+				id: 3,
 				task: 'Помыть посуду',
 				category: 'Личное',
 				done: false,
@@ -16,17 +21,14 @@ function todoApp() {
 			},
 
 			{
-				id: 3,
+				id: 1,
 				task: 'Разработать приложение',
 				category: 'Работа',
 				done: false,
 			},
 		],
 
-		current: {
-			task: '',
-			category: 'Личное',
-		},
+		categories: ['Личное', 'Работа', 'Семья'],
 
 		visibility: 'Все',
 
@@ -38,7 +40,7 @@ function todoApp() {
 				return;
 			}
 
-			this.todos.push({
+			this.todos.unshift({
 				id: Date.now(),
 				task: this.current.task,
 				category: this.current.category,
